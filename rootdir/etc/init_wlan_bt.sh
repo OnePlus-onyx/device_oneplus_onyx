@@ -4,12 +4,12 @@
 ## Wait for WCNSS service to setup WLAN device over QMI
 
 # Workaround for conn_init not copying the updated firmware
-rm /data/misc/wifi/WCNSS_qcom_cfg.ini
-rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
+#rm /data/misc/wifi/WCNSS_qcom_cfg.ini
+#rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
 export LD_LIBRARY_PATH=/vendor/lib64:/system/lib64:/vendor/lib:/system/lib
 #logwrapper /system/bin/conn_init
 
-echo 1 > /dev/wcnss_wlan
+#echo 1 > /dev/wcnss_wlan
 
 enable_bt () {
 
@@ -27,11 +27,11 @@ enable_bt () {
 
 while true; do
     sleep 2
-    if [ ! -f /sys/devices/pci0001:00/0001:00:00.0/0001:01:00.0/net/wlP1p1s0/address ]; then
+   # if [ ! -f /sys/devices/pci0001:00/0001:00:00.0/0001:01:00.0/net/wlP1p1s0/address ]; then
         echo sta > /sys/module/wlan/parameters/fwpath
-    else
+   # else
         # enable bluetooth here since we have to wait for wlan to be initialized
-        enable_bt
+   #     enable_bt
         break
-    fi
+   # fi
 done

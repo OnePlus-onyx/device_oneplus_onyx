@@ -185,8 +185,9 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 TARGET_USES_WCNSS_CTRL := true
 TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_USES_WCNSS_MAC_ADDR_REV := true
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_AP := "ap"
+## Those break Wi-Fi when enabling the hotspot on UBPorts
+#WIFI_DRIVER_FW_PATH_STA := "sta"
+#WIFI_DRIVER_FW_PATH_AP := "ap"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 -include vendor/oneplus/onyx/BoardConfigVendor.mk

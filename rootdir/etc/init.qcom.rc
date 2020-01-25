@@ -183,6 +183,24 @@ on boot
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
+    #Vibrator
+    chmod 0666 /sys/class/timed_output/vibrator/enable
+    
+    #LEDs
+    chmod 0666 /sys/class/leds/red/blink
+    chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/green/blink
+    chmod 0666 /sys/class/leds/green/brightness
+    chmod 0666 /sys/class/leds/blue/blink
+    chmod 0666 /sys/class/leds/blue/brightness
+
+    #torch
+    chmod 0666 /sys/class/leds/led:flash_torch/brightness
+    chmod 0666 /sys/class/leds/led:flash_0/brightness
+    chmod 0666 /sys/class/leds/led:flash_1/brightness
+    chmod 0666 /sys/class/leds/torch-light0/brightness
+    chmod 0666 /sys/class/leds/torch-light1/brightness
+
 on post-fs
     # Reverse Keys
     write /proc/s1302/key_rep 1
