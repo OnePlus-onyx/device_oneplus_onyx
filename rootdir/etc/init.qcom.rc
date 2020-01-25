@@ -607,3 +607,9 @@ service ril-daemon1 /system/bin/rild -c 2
     socket rild-debug2 stream 660 radio system
     user root
     group radio cache inet misc audio log readproc wakelock qcom_diag
+
+service init_wlan_bt /system/bin/sh /system/etc/init_wlan_bt.sh
+    class main
+    user root
+    group root
+    oneshot

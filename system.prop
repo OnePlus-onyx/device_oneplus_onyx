@@ -118,3 +118,6 @@ debug.time_services.enable=true
 
 # Wifi
 wifi.interface=wlan0
+
+#Mir
+ro.build.qti_bsp.abi=1
