@@ -541,6 +541,7 @@ service config_bdaddr /system/bin/btnvtool -O
     class late_start
     user bluetooth
     group bluetooth radio
+    disabled
 
 service hciattach /system/bin/sh /init.qcom.bt.sh
     class late_start
