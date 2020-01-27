@@ -74,5 +74,5 @@ LOCAL_MODULE       := init_wlan_bt.sh
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init_wlan_bt.sh
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)
 include $(BUILD_PREBUILT)

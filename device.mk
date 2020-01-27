@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.power.rc \
     init.qcom.rc \
+    init_wlan_bt.sh \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
@@ -221,7 +222,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf \
-    init_wlan_bt.sh \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny
@@ -233,16 +233,36 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/usr/lib/lxc-android-config/70-onyx.rules \
     $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/etc/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override \
     $(LOCAL_PATH)/ubuntu/config.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/halium/usr/share/powerd/device_configs/config-onyx.xml \
     $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/adbd.conf \
     $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/android-tools-adb.conf \
     $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
-    $(LOCAL_PATH)/ubuntu/tri_state.py:system/halium/usr/share/tri_state_switch/tri_state.py
+    $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/onyx.conf \
+    $(LOCAL_PATH)/ubuntu/tri_state.py:system/halium/usr/share/tri_state_switch/tri_state.py \
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/halium/etc/init/bluetooth-touch-onyx.conf
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/usr/lib/lxc-android-config/70-onyx.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/etc/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/ubuntu/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/ubuntu/usr/share/powerd/device_configs/config-onyx.xml \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/ubuntu/etc/init/android-tools-adb.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/onyx.conf \
+    $(LOCAL_PATH)/ubuntu/tri_state.py:system/ubuntu/usr/share/tri_state_switch/tri_state.py \
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/ubuntu/etc/init/bluetooth-touch-onyx.conf
 
 # UBPorts
- PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
      libubuntu_application_api \
      direct_ubuntu_application_sensors_c_api_for_hybris_test \
      direct_ubuntu_application_sensors_for_hybris_test \
