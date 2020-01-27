@@ -23,13 +23,8 @@ enable_bt () {
 
 }
 
-while true; do
-    sleep 2
-    if [ ! -f /sys/devices/fb000000.qcom,wcnss-wlan/net/wlan0/address ]; then
-        echo sta > /sys/module/wlan/parameters/fwpath
-    else
-        # enable bluetooth here since we have to wait for wlan to be initialized
-        enable_bt
-        break
-    fi
-done
+
+sleep 20
+echo sta > /sys/module/wlan/parameters/fwpath
+enable_bt
+
