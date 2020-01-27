@@ -243,7 +243,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
     $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/onyx.conf \
     $(LOCAL_PATH)/ubuntu/tri_state.py:system/halium/usr/share/tri_state_switch/tri_state.py \
-    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/halium/etc/init/bluetooth-touch-onyx.conf
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/halium/etc/init/bluetooth-touch-onyx.conf \
+    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa \
+    $(LOCAL_PATH)/ubuntu/anbox-tool:system/halium/usr/bin/anbox-tool \
+    $(LOCAL_PATH)/ubuntu/environment:system/halium/etc/environment \
+    $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/ubuntu/base:system/halium/etc/apparmor.d/abstractions/base
 
 
 PRODUCT_COPY_FILES += \
@@ -259,7 +264,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/android.conf \
     $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/onyx.conf \
     $(LOCAL_PATH)/ubuntu/tri_state.py:system/ubuntu/usr/share/tri_state_switch/tri_state.py \
-    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/ubuntu/etc/init/bluetooth-touch-onyx.conf
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/ubuntu/etc/init/bluetooth-touch-onyx.conf \
+    $(LOCAL_PATH)/ubuntu/touch.pa:system/ubuntu/etc/pulse/touch.pa \
+    $(LOCAL_PATH)/ubuntu/anbox-tool:system/ubuntu/usr/bin/anbox-tool \
+    $(LOCAL_PATH)/ubuntu/environment:system/ubuntu/etc/environment \
+    $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/ubuntu/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/ubuntu/base:system/ubuntu/etc/apparmor.d/abstractions/base
 
 # UBPorts
 PRODUCT_PACKAGES += \
