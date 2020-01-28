@@ -248,7 +248,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/anbox-tool:system/halium/usr/bin/anbox-tool \
     $(LOCAL_PATH)/ubuntu/environment:system/halium/etc/environment \
     $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
-    $(LOCAL_PATH)/ubuntu/base:system/halium/etc/apparmor.d/abstractions/base
+    $(LOCAL_PATH)/ubuntu/base:system/halium/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubuntu/usensord.conf:system/halium/usr/share/upstart/sessions/usensord.conf
 
 
 PRODUCT_COPY_FILES += \
@@ -269,7 +270,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/anbox-tool:system/ubuntu/usr/bin/anbox-tool \
     $(LOCAL_PATH)/ubuntu/environment:system/ubuntu/etc/environment \
     $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/ubuntu/etc/apparmor.d/local/usr.bin.media-hub-server \
-    $(LOCAL_PATH)/ubuntu/base:system/ubuntu/etc/apparmor.d/abstractions/base
+    $(LOCAL_PATH)/ubuntu/base:system/ubuntu/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubuntu/usensord.conf:system/ubuntu/usr/share/upstart/sessions/usensord.conf
 
 # UBPorts
 PRODUCT_PACKAGES += \
@@ -281,6 +283,8 @@ PRODUCT_PACKAGES += \
      libmedia_compat_layer_32 \
      libaudioflingerglue \
      libdroidmedia \
+     minimediaservice \
+     minisfservice \
      libminisf
 
 # for off charging mode
