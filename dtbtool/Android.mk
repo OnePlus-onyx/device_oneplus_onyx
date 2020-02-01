@@ -1,4 +1,3 @@
-ifeq ($(BOARD_KERNEL_SEPARATED_DT_ONYX),true)
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -13,4 +12,3 @@ LOCAL_MODULE := dtbToolONYX
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_HOST_EXECUTABLE)
-endif

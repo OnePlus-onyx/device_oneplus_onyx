@@ -17,8 +17,14 @@
 # inherit from Oppo common
 -include device/oppo/common/BoardConfigCommon.mk
 
+# Inherit from CM directly
+-include vendor/cm/BoardConfig.mk
+
+
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
+
+
 
 
 PLATFORM_PATH := device/oneplus/onyx
@@ -48,11 +54,9 @@ TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/board-info.txt
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-#BOARD_KERNEL_SEPARATED_DT_ONYX := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 01000000 --tags_offset 00000100
 #BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 01000000 --tags_offset 00000100 --dt $(PLATFORM_PATH)/dt.img
 #TARGET_CUSTOM_DTBTOOL := dtbToolONYX
