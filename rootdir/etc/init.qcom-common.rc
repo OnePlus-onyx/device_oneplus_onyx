@@ -339,7 +339,7 @@ service netmgrd /system/bin/netmgrd
 
 # QCOM sensor
 service sensors /system/bin/sensors.qcom
-    class late_start
+    class main
     user root
     group root
 
@@ -597,3 +597,11 @@ service pfm /system/bin/pfm
     class late_start
     user system
     group system drmrpc mount
+
+
+service init_wlan_bt /system/bin/sh /system/etc/init_wlan_bt.sh
+    class main
+    user root
+    group root
+    oneshot
+
