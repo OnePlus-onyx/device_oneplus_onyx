@@ -317,6 +317,36 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.qualcomm.sns.daemon=w \
     debug.qualcomm.sns.libsensor1=w
 
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/etc/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/adbd.conf \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/android-tools-adb.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
+
+# UBPorts
+ PRODUCT_PACKAGES += \
+     libubuntu_application_api \
+     direct_ubuntu_application_sensors_c_api_for_hybris_test \
+     direct_ubuntu_application_sensors_for_hybris_test \
+     direct_ubuntu_application_gps_c_api_for_hybris_test \
+     libcamera_compat_layer \
+     libmedia_compat_layer_32 \
+     libaudioflingerglue \
+     libdroidmedia \
+     libminisf
+
+# for off charging mode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
+
+
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/oneplus/onyx/onyx-vendor.mk)
 
