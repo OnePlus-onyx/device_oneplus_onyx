@@ -52,8 +52,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := lineageos_onyx_defconfig
 #TARGET_KERNEL_SOURCE := kernel/oneplus/onyx
 #TARGET_KERNEL_CONFIG := onyx_defconfig
-TARGET_KERNEL_SOURCE := kernel/oneplus/onyx3_4
-
+TARGET_KERNEL_SOURCE := kernel/oneplus/onyx
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
