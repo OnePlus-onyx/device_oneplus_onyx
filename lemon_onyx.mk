@@ -27,6 +27,9 @@ $(call inherit-product, vendor/lemon/config/common.mk)
 # Call the proprietary setup
 $(call inherit-product, vendor/oneplus/onyx/onyx-vendor.mk)
 
+#B2G
+$(call inherit-product, gonk-misc/b2g.mk)
+
 PRODUCT_NAME := lemon_onyx
 PRODUCT_DEVICE := onyx
 PRODUCT_MANUFACTURER := OnePlus
