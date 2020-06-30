@@ -15,7 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/device.mk \
-    $(LOCAL_DIR)/lemon_onyx.mk
+    $(LOCAL_DIR)/b2g_onyx.mk
 
 COMMON_LUNCH_CHOICES := \
-    lemon_onyx-userdebug
+    b2g_onyx-userdebug \
+    b2g_onyx-eng
