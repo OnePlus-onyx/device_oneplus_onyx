@@ -32,8 +32,8 @@ PRODUCT_COPY_FILES += \
     vendor/lemon/prebuilt/etc/init/init.common.rc:system/etc/init/init.common.rc
 
 # Bootanimation
-PRODUCT_COPY_FILES += \
-    vendor/lemon/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip
+#PRODUCT_COPY_FILES += \
+#    vendor/lemon/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip
 
 # World APN list
 PRODUCT_COPY_FILES += \
