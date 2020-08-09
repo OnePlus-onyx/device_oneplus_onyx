@@ -319,6 +319,70 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
+    
+    
+ # halium   
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/usr/lib/lxc-android-config/70-onyx.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/halium/etc/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/halium/usr/share/powerd/device_configs/config-onyx.xml \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/adbd.conf \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/halium/etc/init/android-tools-adb.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/halium/etc/ubuntu-touch-session.d/onyx.conf \
+    $(LOCAL_PATH)/ubuntu/tri_state.py:system/halium/usr/share/tri_state_switch/tri_state.py \
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/halium/etc/init/bluetooth-touch-onyx.conf \
+    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa \
+    $(LOCAL_PATH)/ubuntu/anbox-tool:system/halium/usr/bin/anbox-tool \
+    $(LOCAL_PATH)/ubuntu/environment:system/halium/etc/environment \
+    $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/ubuntu/base:system/halium/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubuntu/usensord.conf:system/halium/usr/share/upstart/sessions/usensord.conf
+
+# UBPorts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/usr/lib/lxc-android-config/70-onyx.rules \
+    $(LOCAL_PATH)/ubuntu/70-onyx.rules:system/ubuntu/etc/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/ubuntu/usr/share/powerd/device_configs/config-default.xml \
+    $(LOCAL_PATH)/ubuntu/config.xml:system/ubuntu/usr/share/powerd/device_configs/config-onyx.xml \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \
+    $(LOCAL_PATH)/ubuntu/adbd.conf:system/ubuntu/etc/init/android-tools-adb.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/onyx.conf \
+    $(LOCAL_PATH)/ubuntu/tri_state.py:system/ubuntu/usr/share/tri_state_switch/tri_state.py \
+    $(LOCAL_PATH)/ubuntu/bluetooth-touch-onyx.conf:system/ubuntu/etc/init/bluetooth-touch-onyx.conf \
+    $(LOCAL_PATH)/ubuntu/touch.pa:system/ubuntu/etc/pulse/touch.pa \
+    $(LOCAL_PATH)/ubuntu/anbox-tool:system/ubuntu/usr/bin/anbox-tool \
+    $(LOCAL_PATH)/ubuntu/environment:system/ubuntu/etc/environment \
+    $(LOCAL_PATH)/ubuntu/usr.bin.media-hub-server:system/ubuntu/etc/apparmor.d/local/usr.bin.media-hub-server \
+    $(LOCAL_PATH)/ubuntu/base:system/ubuntu/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubuntu/usensord.conf:system/ubuntu/usr/share/upstart/sessions/usensord.conf
+
+# UBPorts
+PRODUCT_PACKAGES += \
+     libubuntu_application_api \
+     direct_ubuntu_application_sensors_c_api_for_hybris_test \
+     direct_ubuntu_application_sensors_for_hybris_test \
+     direct_ubuntu_application_gps_c_api_for_hybris_test \
+     libcamera_compat_layer \
+     libmedia_compat_layer_32 \
+     libaudioflingerglue \
+     libdroidmedia \
+     minimediaservice \
+     minisfservice \
+     libminisf
+
+# for off charging mode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
